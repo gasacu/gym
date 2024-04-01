@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GORILLA GYM</title>
+    <link rel="stylesheet" href="resources/style.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body itemscope itemtype="https://schema.org/WebPage">
+    <div class="Container">
+        <header class="Header">
+            <a class="Logo" href="#" title="Înapoi la pagina principală">
+                <picture class="LogoPicture">
+                    <source type="image/svg+xml" srcset="./images/gorilla-logo-desktop.svg"
+                    media="(min-width: 750px)" />
+                    <source type="image/svg+xml" srcset="./images/gorilla-logo-mobile.svg"
+                    media="(min-width: 100px)" />
+                    <img src="./images/gorilla-logo-mobile.png" alt="Gorilla Gym - Logo" width="102" height="34" />
+                </picture>
+            </a>
+            <button class="ToggleMenu" type="button">
+                <img src="./images/icon-menu.svg" class="ToggleIcon" width="28" height="21" alt="Deschide sau închide meniul" />
+            </button>
+            <nav class="MainMenu">
+                <ul class="MainMenuList">
+                    <li class="MainMenuItem">
+                        <a href="#" class="MainMenuLink">Acasă</a>
+                    </li>
+                    <li class="MainMenuItem">
+                        <a href="#" class="MainMenuLink">Despre noi</a>
+                    </li>
+                    <li class="MainMenuItem">
+                        <a href="#" class="MainMenuLink">Servicii</a>
+                    </li>
+                </ul>
+                <ul class="MainMenuList2">
+                    <li class="MainMenuItem">
+                        <a href="#" class="MainMenuLink">Pagini</a>
+                    </li>
+                    <li class="MainMenuItem">
+                        <a href="#" class="MainMenuLink">Abonamente</a>
+                    </li>
+                    <li class="MainMenuItem">
+                        <a href="#" class="MainMenuLink">Blog</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section class="Hero">
+            <h1 class="HeroTitle">GORILLA GYM</h1>
+            <div class="Slideshow">
+                <div class="MySlides Fade">
+                    <div class="CornerText">1 / 3</div>
+                    <img src="images/283444284_1178431202726964_5598035296939122371_n.jpg" class="SlideImage">
+                    <button class="Button ButtonPrimary" href="#" title="Vezi mai multe informații despre Gorilla Gym">See Details</button>
+                </div>
+                <div class="MySlides Fade">
+                    <div class="CornerText">2 / 3</div>
+                    <img src="images/285232640_1178431106060307_8395213172766327643_n.jpg" class="SlideImage">
+                    <button class="HeroBtn Button ButtonPrimary" href="#" title="Vezi mai multe informații despre Serviciile Gorilla Gym">See Details</button>
+                </div>
+                <div class="MySlides Fade">
+                    <div class="CornerText">3 / 3</div>
+                    <img src="images/323057728_2369699106532537_7808417564148184124_n.jpg" class="SlideImage">
+                    <button class="Button ButtonPrimary" href="#" title="Vezi mai multe informații despre Abonamentele Gorilla Gym">See Details</button>
+                </div>
+                <a class="Prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div class="SlidesDots">
+                <span class="Dot" onclick="currentSlides(1)"></span>
+                <span class="Dot" onclick="currentSlides(2)"></span>
+                <span class="Dot" onclick="currentSlides(3)"></span>
+            </div>
+        </section>
+        <section class="About">
+            <h3 class="SectionTitle">DESPRE NOI</h3>
+            <p class="SectionText">Îți oferim cel mai bun program pentru sănătatea ta și pentru frumusețea ta din exterior cât și din interior. Îți oferim cele mai bune facilități de fitness.</p>
+            <img src="images/about-us.svg" class="AboutImage" width="320" height="260" alt="Detalii despre cel mai mare lanț de centre de fitness din Craiova">
+            <ul class="AboutSectionList">
+                <li class="AboutSectionItem">
+                    <h4 class="AboutSectionItemTitle">VIZIUNE</h4>
+                    <ul class="AboutSectionItemList">
+                        <li class="AboutSectionItemListItem">Train from beginning into expert</li>
+                        <li class="AboutSectionItemListItem">Modern Facility</li>
+                        <li class="AboutSectionItemListItem">Support 24/7</li>
+                    </ul>
+                </li>
+                <li class="AboutSectionItem">
+                    <h4 class="AboutSectionItemTitle">MISIUNE</h4>
+                    <ul class="AboutSectionItemList">
+                        <li class="AboutSectionItemListItem">Train from beginning into expert</li>
+                        <li class="AboutSectionItemListItem">Modern Facility</li>
+                        <li class="AboutSectionItemListItem">Support 24/7</li>
+                    </ul>
+                </li>
+                <li class="AboutSectionItem">
+                    <h4 class="AboutSectionItemTitle">VALORI</h4>
+                    <ul class="AboutSectionItemList">
+                        <li class="AboutSectionItemListItem">Train from beginning into expert</li>
+                        <li class="AboutSectionItemListItem">Modern Facility</li>
+                        <li class="AboutSectionItemListItem">Support 24/7</li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="#" class="AboutBtn Button ButtonPrimary" title="Află detalii despre echipa Gorilla Gym">Vezi mai multe detalii</a>
+        </section>
+        <section class="Services">
+            <h2 class="SectionTitle">OUR <span>SERVICES</span></h2>
+            <p class="SectionParagraph">Îți oferim cel mai bun program pentru sănătatea ta și pentru frumusețea ta din exterior cât și din interior. Îți oferim cele mai bune facilități de fitness.</p>
+            <ul class="ArticleList">
+                <li class="Article">
+                    <a class="ArticleLink" href="#" title="Citeste articolul @TODO">
+                        <picture class="ArticlePicure">
+                            <source type="image/webp" srcset="./images/generic-thumbnail-desktop.webp" 
+                            media="(min-width:750px)" />
+                            <source type="image/webp" srcset="./images/generic-thumbnail-mobile.webp" 
+                            media="(min-width:100px)" />
+                            <img src="./images/generic-thumbnail-mobile" alt="@TODO" width="280" height="157">
+                        </picture>
+                        <h3 class="ArticleTitle">Body Building</h3>
+                        <p class="ArticleExcerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button class="ArticleButton">SEE DETAILS</button>
+                    </a>
+                </li>
+                <li class="Article">
+                    <a class="ArticleLink" href="#" title="Citeste articolul @TODO">
+                        <picture class="ArticlePicure">
+                            <source type="image/webp" srcset="./images/generic-thumbnail-desktop.webp" 
+                            media="(min-width:750px)" />
+                            <source type="image/webp" srcset="./images/generic-thumbnail-mobile.webp" 
+                            media="(min-width:100px)" />
+                            <img src="./images/generic-thumbnail-mobile" alt="@TODO" width="280" height="157">
+                        </picture>
+                        <h3 class="ArticleTitle">Body Building</h3>
+                        <p class="ArticleExcerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button class="ArticleButton">SEE DETAILS</button>
+                    </a>
+                </li>
+                <li class="Article">
+                    <a class="ArticleLink" href="#" title="Citeste articolul @TODO">
+                        <picture class="ArticlePicure">
+                            <source type="image/webp" srcset="./images/generic-thumbnail-desktop.webp" 
+                            media="(min-width:750px)" />
+                            <source type="image/webp" srcset="./images/generic-thumbnail-mobile.webp" 
+                            media="(min-width:100px)" />
+                            <img src="./images/generic-thumbnail-mobile" alt="@TODO" width="280" height="157">
+                        </picture>
+                        <h3 class="ArticleTitle">Body Building</h3>
+                        <p class="ArticleExcerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button class="ArticleButton">SEE DETAILS</button>
+                    </a>
+                </li>
+                <li class="Article">
+                    <a class="ArticleLink" href="#" title="Citeste articolul @TODO">
+                        <picture class="ArticlePicure">
+                            <source type="image/webp" srcset="./images/generic-thumbnail-desktop.webp" 
+                            media="(min-width:750px)" />
+                            <source type="image/webp" srcset="./images/generic-thumbnail-mobile.webp" 
+                            media="(min-width:100px)" />
+                            <img src="./images/generic-thumbnail-mobile" alt="@TODO" width="280" height="157">
+                        </picture>
+                        <h3 class="ArticleTitle">Body Building</h3>
+                        <p class="ArticleExcerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button class="ArticleButton">SEE DETAILS</button>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <footer class="Footer">
+            <h3 class="FooterTitle">GORILLA GYM</h3>
+                <div class="FooterMenu" >
+                    <ul class="FooterMenuList">
+                        <li class="FooterMenuItem"><a href="#about" class="FooterMenuItemLink" title="Access the About page">About me</a></li>
+                        <li class="FooterMenuItem"><a href="#skills" class="FooterMenuItemLink" title="Access the Skills page">Skills</a></li>
+                        <li class="FooterMenuItem"><a href="#projects" class="FooterMenuItemLink" title="Access the Projects page">Projects</a></li>
+                        <li class="FooterMenuItem"><a href="#education" class="FooterMenuItemLink" title="Access the Education page">Education</a></li>
+                    </ul>
+                </div>
+                <ul class="FooterSocialList">
+                    <li class="FooterSocialItem">
+                        <a class="FooterSocialLink" href="mailto:gsacuianu@gmail.com" target="_blank">
+                            <img src="images/gmail.png" alt="Send me an E-mail" height="30" width="30">
+                        </a>
+                     </li>
+                     <li class="FooterSocialItem">
+                        <a class="FooterSocialLink" href="https://www.linkedin.com/in/gabrielsacuianu/" target="_blank">
+                            <img src="images/linkedin.png" alt="My Linkedin page" height="30" width="30">
+                        </a>
+                     </li>
+                     <li class="FooterSocialItem">
+                        <a class="FooterSocialLink" href="https://twitter.com/GSacuianu" target="_blank">
+                            <img src="images/twitter.png" alt="My Twitter page" height="30" width="30">
+                        </a>
+                     </li>
+                     <li class="FooterSocialItem">
+                        <a class="FooterSocialLink" href="https://www.instagram.com/gabrielsacuianu/" target="_blank">
+                            <img src="images/instagram.png" alt="My Instagram page" height="30" width="30">
+                        </a>
+                     </li>
+                     <li class="FooterSocialItem">
+                        <a class="FooterSocialLink" href="https://www.facebook.com/gsacuianu/" target="_blank">
+                            <img src="images/facebook.png" alt="My Facebook page" height="30" width="30">
+                        </a>
+                     </li>
+                </ul>
+                <p class="FooterRights">© 2024 Gabriel Sacuianu. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
