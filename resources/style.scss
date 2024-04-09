@@ -2,8 +2,10 @@
 
 :root {
     --color-primary: #2B6300;
+    --color-secondary: #FADD23;
     --color-offwhite: #fdfdfd;
     --color-lighgray: rgba(0,0,0,0.1);
+    --color-dark: rgb(0, 0, 0);
 
     --break-medium: 750px;
     --break-large: 1280px;
@@ -47,9 +49,8 @@
 /* GENERAL */
 
 *, *::before, *::after { box-sizing: border-box; }
-  
 
-html { font-family: 'Aleo', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; }
+html { font-family: 'Aleo', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; background: var(--color-offwhite) url('/images/zwartevilt.jpg') left top repeat;}
 
 body { display: block; min-height: 100vh; margin: 0; text-rendering: optimizeSpeed; }
 
@@ -61,21 +62,32 @@ strong { font-weight: 700; }
 
 a { color: var(--color-primary); }
 
-
-.Button {  }
+.Button { display: block; padding: 0.5em 1em; background: var(--color-primary); color: var(--color-offwhite); font-weight: bold; text-decoration: none; text-align: center; border-radius: 0.5em; box-shadow: 0 3px 3px var(--color-lighgray);
+  &:hover { background: #717171; }
+  &:active { background: #717171; }
+}
 .ButtonPrimary {  }
 
+.Highlight { font-weight: bold; color: var(--color-primary); }
 
+.HighResOnly { display: none;
+  @media (min-width: var(--break-large)) { display: inline; }
+}
+
+.Hidden, .ScreenReaders { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
 
 
 /* LAYOUT */
-.Container {  }
-    .Header {  }
-        .Logo {  }
-            .LogoPicture {  }
-        .ToggleMenu {  }
+.Container { position: relative; }
+    .Header { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1; background: var(--color-primary); color: var(--color-offwhite); }
+        .Logo { display: block; }
+            .LogoPicture { display: block; }
+        .ToggleMenu { display: block; background: transparent; fill: var(--color-offwhite); border: none; cursor: pointer; 
+          &:hover {background: var(--color-secondary); color: var(--color-dark);}
+          &:active {background: var(--color-lighgray); color: var(--color-dark);}
+        }
             .ToggleIcon {  }
-        .MainMenu {  }
+        .MainMenu { display: none; }
             .MainMenuList {  }
                 .MainMenuItem {  }
                     .MainMenuLink {}
