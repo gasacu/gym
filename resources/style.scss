@@ -50,7 +50,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { font-family: 'Aleo', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; background: var(--color-offwhite) url('/images/zwartevilt.jpg') left top repeat;}
+html { font-family: 'Aleo', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; background: var(--color-dark) url('/images/zwartevilt.jpg') left top repeat; color: #fff;}
 
 body { display: block; min-height: 100vh; margin: 0; text-rendering: optimizeSpeed; }
 
@@ -61,6 +61,8 @@ input, button, textarea, select { font: inherit; }
 strong { font-weight: 700; }
 
 a { color: var(--color-primary); }
+
+svg { fill: currentColor; }
 
 .Button { display: block; padding: 0.5em 1em; background: var(--color-primary); color: var(--color-offwhite); font-weight: bold; text-decoration: none; text-align: center; border-radius: 0.5em; box-shadow: 0 3px 3px var(--color-lighgray);
   &:hover { background: #717171; }
@@ -79,19 +81,28 @@ a { color: var(--color-primary); }
 
 /* LAYOUT */
 .Container { position: relative; }
-    .Header { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1; background: var(--color-primary); color: var(--color-offwhite); }
-        .Logo { display: block; }
-            .LogoPicture { display: block; }
-        .ToggleMenu { display: block; background: transparent; fill: var(--color-offwhite); border: none; cursor: pointer; 
-          &:hover {background: var(--color-secondary); color: var(--color-dark);}
-          &:active {background: var(--color-lighgray); color: var(--color-dark);}
+    .Header { display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; min-height: 4.687rem; padding: 0 1.5em; z-index: 1; background: var(--color-dark); color: var(--color-offwhite); }
+        .ToggleMenu { display: block; padding: 0.2em; border-radius: 4px; background: var(--color-primary); color: var(--color-offwhite); fill: var(--color-offwhite); border: none; cursor: pointer; 
+          &:hover {color: var(--color-dark); fill: var(--color-dark);}
+          &:active {color: var(--color-dark); fill: var(--color-dark);}
         }
-            .ToggleIcon {  }
-        .MainMenu { display: none; }
-            .MainMenuList {  }
-                .MainMenuItem {  }
-                    .MainMenuLink {}
+            .ToggleIcon { display: block; }
+        .MainMenu { display: none; position: absolute; width: 100%; top: 4.687rem; left: 0; background: var(--color-dark); color: var(--color-offwhite);}
+            .MainMenuList { display: block; margin: 0; padding: 0; border-top: 1px solid var(--color-offwhite); }
+                .MainMenuItem { display: block; }
+                    .MainMenuLink { display: block; padding: 1rem 1.5rem; font-size: 1.5rem; line-height: 1em; text-decoration: none; color: var(--color-offwhite); 
+                      &:hover { color: var(--color-primary); text-decoration: underline; }
+                      &:active { color: var(--color-secondary); text-decoration: underline; }
+                    }
+                    .SecondMenuList {  display: block; margin: 0; padding: 0 3rem;  }
+                      .SecondMenuItem {  display: block;  }
+                        .SecondMenuLink { display: block; padding: 1rem 1.5rem; font-size: 1.4rem; line-height: 1em; text-decoration: none; color: var(--color-offwhite); 
+                          &:hover { color: var(--color-primary); text-decoration: underline; }
+                          &:active { color: var(--color-secondary); text-decoration: underline; }
+                        }
     .Hero {  }
+      .Logo { display: block; padding: 3rem 0;}
+        .LogoPicture { display: flex; align-items: center; justify-content: center;}
     .About {  }
     .Services {  }
     .Footer {  }
