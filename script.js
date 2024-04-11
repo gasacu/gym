@@ -1,3 +1,5 @@
+// Slider //
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -46,3 +48,4 @@ function showSlides() {
     // change image every 3 seconds
 }
 */
+

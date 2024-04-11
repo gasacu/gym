@@ -2,9 +2,8 @@
 
 :root {
     --color-primary: #2B6300;
-    --color-secondary: #FADD23;
+    --color-secondary: rgb(128,128,128);
     --color-offwhite: #fdfdfd;
-    --color-lighgray: rgba(0,0,0,0.1);
     --color-dark: rgb(0, 0, 0);
 
     --break-medium: 750px;
@@ -64,11 +63,12 @@ a { color: var(--color-primary); }
 
 svg { fill: currentColor; }
 
-.Button { display: block; padding: 0.5em 1em; background: var(--color-primary); color: var(--color-offwhite); font-weight: bold; text-decoration: none; text-align: center; border-radius: 0.5em; box-shadow: 0 3px 3px var(--color-lighgray);
-  &:hover { background: #717171; }
-  &:active { background: #717171; }
+.Button {  }
+
+.ButtonPrimary { display: inline-block !important; font-size: 0.9em; padding: 0.8em 2.2em; background: rgba(255, 255, 255, 0.15); color: var(--color-offwhite); text-transform: uppercase; text-decoration: none; text-align: center; border: 1px solid var(--color-offwhite) !important; border-radius: 3px; box-shadow: 0 3px 3px var(--color-lighgray); white-space: nowrap; 
+  &:hover { background: rgba(255, 255, 255, 0.05); color: var(--color-primary); border: 1px solid var(--color-offwhite) !important;} 
+  &:active { background: rgba(255, 255, 255, 0.05); color: var(--color-primary); border: 1px solid var(--color-primary) !important; } 
 }
-.ButtonPrimary {  }
 
 .Highlight { font-weight: bold; color: var(--color-primary); }
 
@@ -87,22 +87,23 @@ svg { fill: currentColor; }
           &:active {color: var(--color-dark); fill: var(--color-dark);}
         }
             .ToggleIcon { display: block; }
-        .MainMenu { display: none; position: absolute; width: 100%; top: 4.687rem; left: 0; background: var(--color-dark); color: var(--color-offwhite);}
-            .MainMenuList { display: block; margin: 0; padding: 0; border-top: 1px solid var(--color-offwhite); }
+        .MainMenu { display: block; position: absolute; width: 100%; top: 4.687rem; left: 0; background: var(--color-dark); color: var(--color-offwhite);}
+            .MainMenuList { display: block; margin: 0; padding: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.187); }
                 .MainMenuItem { display: block; }
-                    .MainMenuLink { display: block; padding: 1rem 1.5rem; font-size: 1.5rem; line-height: 1em; text-decoration: none; color: var(--color-offwhite); 
-                      &:hover { color: var(--color-primary); text-decoration: underline; }
-                      &:active { color: var(--color-secondary); text-decoration: underline; }
+                    .MainMenuLink { display: block; padding: 1rem 1.5rem; font-size: 1.2rem; font-weight: 400; line-height: 1em; text-decoration: none; color: var(--color-offwhite); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.151); transition: .3s;
+                      &:hover { color: var(--color-primary); box-shadow: 1.5px 0 0 var(--color-primary); }
+                      &:active { color: var(--color-secondary); }
                     }
                     .SecondMenuList {  display: block; margin: 0; padding: 0 3rem;  }
                       .SecondMenuItem {  display: block;  }
-                        .SecondMenuLink { display: block; padding: 1rem 1.5rem; font-size: 1.4rem; line-height: 1em; text-decoration: none; color: var(--color-offwhite); 
-                          &:hover { color: var(--color-primary); text-decoration: underline; }
-                          &:active { color: var(--color-secondary); text-decoration: underline; }
+                        .SecondMenuLink { display: block; padding: 1rem 1.5rem; font-size: 1.1rem; line-height: 1em; text-decoration: none; color: var(--color-offwhite); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.151); transition: .3s;
+                          &:hover { color: var(--color-primary); box-shadow: 1.5px 0 0 var(--color-primary); }
+                          &:active { color: var(--color-primary); }
                         }
     .Hero {  }
       .Logo { display: block; padding: 3rem 0;}
         .LogoPicture { display: flex; align-items: center; justify-content: center;}
+      .HeroButtons { display: block; text-align: center; margin: 1rem;}
     .About {  }
     .Services {  }
     .Footer {  }
