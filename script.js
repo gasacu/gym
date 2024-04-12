@@ -1,5 +1,4 @@
 // Slider //
-
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -28,8 +27,7 @@ function showSlides(n) {
 }
 
 /*
-// Auto Slide
-
+// Auto Slide //
 var slideIndex = 0;
 showSlides();
 
@@ -49,3 +47,11 @@ function showSlides() {
 }
 */
 
+// Accordion Menu List //
+const Accordion = document.getElementsByClassName('ContentBx');
+
+for(i = 0; i<Accordion.length; i++) {
+    Accordion[i].addEventListener('click', function(){
+        this.classList.toggle('Active')
+    })
+}
