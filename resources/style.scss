@@ -65,7 +65,7 @@ svg { fill: currentColor; }
 
 .Button {  }
 
-.ButtonPrimary { display: inline-block !important; font-size: 0.9em; padding: 0.8em 2.2em; background: rgba(255, 255, 255, 0.15); color: var(--color-offwhite); text-transform: uppercase; text-decoration: none; text-align: center; border: 1px solid var(--color-offwhite) !important; border-radius: 3px; box-shadow: 0 3px 3px var(--color-lighgray); white-space: nowrap; 
+.ButtonPrimary { display: inline-block !important; font-size: 0.9em; padding: 0.8em 2.2em; margin: 1em; background: rgba(255, 255, 255, 0.15); color: var(--color-offwhite); text-transform: uppercase; text-decoration: none; text-align: center; border: 1px solid var(--color-offwhite) !important; border-radius: 3px; box-shadow: 0 3px 3px var(--color-lighgray); white-space: nowrap; 
   &:hover { background: rgba(255, 255, 255, 0.05); color: var(--color-primary); border: 1px solid var(--color-offwhite) !important;} 
   &:active { background: rgba(255, 255, 255, 0.05); color: var(--color-primary); border: 1px solid var(--color-primary) !important; } 
 }
@@ -81,30 +81,48 @@ svg { fill: currentColor; }
 
 /* LAYOUT */
 .Container { position: relative; }
-    .Header { display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; min-height: 4.687rem; padding: 0 1.5em; z-index: 1; background: var(--color-dark); color: var(--color-offwhite); }
+    .Header { display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; min-height: 4.687rem; padding: 0 1.5em; z-index: 1; background: var(--color-dark); color: var(--color-offwhite); 
+      @media (min-width: 750px) { display: flex; justify-content: center; }
+    }
         .ToggleMenu { display: block; padding: 0.2em; border-radius: 4px; background: var(--color-primary); color: var(--color-offwhite); fill: var(--color-offwhite); border: none; cursor: pointer; 
           &:hover {color: var(--color-dark); fill: var(--color-dark);}
           &:active {color: var(--color-dark); fill: var(--color-dark);}
+          @media (min-width: 750px) { display: none; }
         }
             .ToggleIcon { display: block; }
-        .MainMenu { display: block; position: absolute; width: 100%; top: 4.687rem; left: 0; background: rgba(0, 0, 0, 0.9); color: var(--color-offwhite);}
-            .MainMenuList { display: block; margin: 0; padding: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.187); }
+        .MainMenu { display: none; position: absolute; width: 100%; max-height: calc(100vh - 4.687rem); overflow-y: auto; top: 4.687rem; left: 0; background: rgba(0, 0, 0, 0.9); color: var(--color-offwhite); border-top: 0.15rem solid rgba(255, 255, 255, 0.187); 
+          @media (min-width: 750px) { display: flex; align-self: center; width: auto; max-height: none; overflow: none; position: static; top: auto; background: transparent; border: none; }
+        }
+        .MainMenu.Active { display: block; }
+            .MainMenuList { display: block; margin: 0; padding: 1rem; 
+              @media (min-width: 750px) { display: flex;  }
+            }
                 .MainMenuItem { display: block; }
                     .MainMenuLink { display: block; padding: 1rem 1.5rem; font-size: 1.1rem; font-weight: 300; line-height: 1em; text-decoration: none; color: var(--color-offwhite); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.151); transition: .3s;
                       &:hover { color: var(--color-primary); box-shadow: 1.5px 0 0 var(--color-primary); }
                       &:active { color: var(--color-primary); }
                       &:focus { color: var(--color-primary); box-shadow: 1.5px 0 0 var(--color-primary);}
+                      @media (min-width: 750px ) { box-shadow: none; 
+                        &:hover {box-shadow: none;}
+                        &:active {box-shadow: none;}
+                        &:focus {box-shadow: none;}
+                      }
                     }
                     .Accordion { display: block; }
                     .Accordion .ContentBx { position: relative; }
                     .Accordion .ContentBx .Label { position: relative; cursor: pointer; }
                     .Accordion .ContentBx .Label::before { content: '+'; position: absolute; top: 50%; right: 50px; transform: translateY(-50%); font-size: 1.4em; }
-                    .Accordion .ContentBx.Active .Label::before { content: '-';  font-size: 2.2em;}
-                    .Accordion .ContentBx .Content { position: relative; height: 0; overflow: hidden; transition: 0.5s; }
-                    .Accordion .ContentBx.Active .Content { height: fit-content; }
+                    .Accordion .ContentBx.Active1 .Label::before { content: '-';  font-size: 2.2em;}
+                    .Accordion .ContentBx .Content { position: relative; height: 0; overflow: hidden; transition: 0.5s; 
+                    }
+                    .Accordion .ContentBx.Active1 .Content { height: fit-content; }
+                    .Content { 
+                      @media (min-width: 750px) { display: block; position: relative; z-index: 3;  width: 15rem; background: var(--color-secondary); box-shadow: rgba(60, 64, 67, 0.3) 1px 1px 2px 0px, rgba(60, 64, 67, 0.15) 1px 2px 6px 2px; margin: 0 0 2em; }
+                    }
+                    .Content.Active { display: block; border-radius: 5px; margin-left: 0.5em;     }
                     .SecondMenuList {  display: block; margin: 0; padding: 0 3rem;  }
                       .SecondMenuItem {  display: block; }
-                        .SecondMenuLink { display: block; padding: 1rem 2.5rem; font-size: 0.9rem; line-height: 1em; text-decoration: none; font-weight: 300; color: var(--color-offwhite); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.151); transition: .3s;
+                        .SecondMenuLink { display: block; padding: 1rem 2.5rem; font-size: 1rem; line-height: 1em; text-decoration: none; font-weight: 300; color: var(--color-offwhite); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.151); transition: .3s;
                           &:hover { color: var(--color-primary); box-shadow: 1.5px 0 0 var(--color-primary); text-decoration: underline;}
                           &:active { color: var(--color-primary); }
                         }
