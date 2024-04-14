@@ -5,6 +5,7 @@
     --color-secondary: rgb(128,128,128);
     --color-offwhite: #fdfdfd;
     --color-dark: rgb(0, 0, 0);
+    --color-light-gray: rgba(40, 40, 40, 0.80);
 
     --break-medium: 750px;
     --break-large: 1280px;
@@ -81,25 +82,29 @@ svg { fill: currentColor; }
 
 /* LAYOUT */
 .Container { position: relative; }
-    .Header { display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; min-height: 4.687rem; padding: 0 1.5em; z-index: 1; background: var(--color-dark); color: var(--color-offwhite); 
+    /* Header */
+    .Header { display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; min-height: 4.687rem; padding: 0 1.5em; z-index: 100; background: var(--color-dark); color: var(--color-offwhite); box-shadow: 0 2px 8px hsla(0, 0%, 100%, 0.1);
       @media (min-width: 750px) { display: flex; justify-content: center; }
     }
         .ToggleMenu { display: block; padding: 0.2em; border-radius: 4px; background: var(--color-primary); color: var(--color-offwhite); fill: var(--color-offwhite); border: none; cursor: pointer; 
           &:hover {color: var(--color-dark); fill: var(--color-dark);}
           &:active {color: var(--color-dark); fill: var(--color-dark);}
+          &:focus {color: var(--color-dark); fill: var(--color-dark);}
           @media (min-width: 750px) { display: none; }
         }
             .ToggleIcon { display: block; }
-        .MainMenu { display: none; position: absolute; width: 100%; max-height: calc(100vh - 4.687rem); overflow-y: auto; top: 4.687rem; left: 0; background: rgba(0, 0, 0, 0.9); color: var(--color-offwhite); border-top: 0.15rem solid rgba(255, 255, 255, 0.187); 
+        .MainMenu { display: none; position: absolute; width: 100%; height: calc(100vh - 4.687rem); overflow: auto; top: 4.687rem; left: 0; background: rgba(0, 0, 0, 0.9); color: var(--color-offwhite); border-top: 0.1rem solid rgba(255, 255, 255, 0.187); transition: top .4s, opacity .3s; 
           @media (min-width: 750px) { display: flex; align-self: center; width: auto; max-height: none; overflow: none; position: static; top: auto; background: transparent; border: none; }
         }
         .MainMenu.Active { display: block; }
             .MainMenuList { display: block; margin: 0; padding: 1rem; 
               @media (min-width: 750px) { display: flex;  }
             }
-                .MainMenuItem { display: block; }
-                    .MainMenuLink { display: block; padding: 1rem 1.5rem; font-size: 1.1rem; font-weight: 300; line-height: 1em; text-decoration: none; color: var(--color-offwhite); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.151); transition: .3s;
-                      &:hover { color: var(--color-primary); box-shadow: 1.5px 0 0 var(--color-primary); }
+                .MainMenuItem { display: block; 
+                  @media (min-width: 750px) { display: inline-block; position: relative;}
+                }
+                    .MainMenuLink { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; font-size: 1.1rem; font-weight: 400; line-height: 1em; text-decoration: none; color: var(--color-offwhite); transition: background-color .3s;
+                      &:hover { background-color: var(--color-light-gray)}
                       &:active { color: var(--color-primary); }
                       &:focus { color: var(--color-primary); box-shadow: 1.5px 0 0 var(--color-primary);}
                       @media (min-width: 750px ) { box-shadow: none; 
@@ -108,24 +113,23 @@ svg { fill: currentColor; }
                         &:focus {box-shadow: none;}
                       }
                     }
-                    .Accordion { display: block; }
-                    .Accordion .ContentBx { position: relative; }
-                    .Accordion .ContentBx .Label { position: relative; cursor: pointer; }
-                    .Accordion .ContentBx .Label::before { content: '+'; position: absolute; top: 50%; right: 50px; transform: translateY(-50%); font-size: 1.4em; }
-                    .Accordion .ContentBx.Active1 .Label::before { content: '-';  font-size: 2.2em;}
-                    .Accordion .ContentBx .Content { position: relative; height: 0; overflow: hidden; transition: 0.5s; 
-                    }
-                    .Accordion .ContentBx.Active1 .Content { height: fit-content; }
-                    .Content { 
-                      @media (min-width: 750px) { display: block; position: relative; z-index: 3;  width: 15rem; background: var(--color-secondary); box-shadow: rgba(60, 64, 67, 0.3) 1px 1px 2px 0px, rgba(60, 64, 67, 0.15) 1px 2px 6px 2px; margin: 0 0 2em; }
-                    }
-                    .Content.Active { display: block; border-radius: 5px; margin-left: 0.5em;     }
-                    .SecondMenuList {  display: block; margin: 0; padding: 0 3rem;  }
-                      .SecondMenuItem {  display: block; }
-                        .SecondMenuLink { display: block; padding: 1rem 2.5rem; font-size: 1rem; line-height: 1em; text-decoration: none; font-weight: 300; color: var(--color-offwhite); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.151); transition: .3s;
-                          &:hover { color: var(--color-primary); box-shadow: 1.5px 0 0 var(--color-primary); text-decoration: underline;}
-                          &:active { color: var(--color-primary); }
+                .Dropdown {  }
+                  .DropdownContent, .DropdownGroup, .DropdownList { display: grid; }
+                    .DropdownBtn { cursor: pointer; }
+                      .DropdownArrow { font-size: 1.5rem; font-weight: initial; transition: transform .4s; }
+                    .DropdownContainer { background-color: var(--color-light-gray); height: 0; overflow: hidden; transition: height .4s; }
+                      .DropdownContent { row-gap: 1.75rem; }
+                        .DropdownGroup { padding-left: 2.5rem; row-gap: .5rem; 
+                          &:first-child { margin-top: 1.25rem; }
+                          &:last-child { margin-bottom: 1.25rem; }
                         }
+                          .DropdownIcon {  }
+                          .DropdownTitle { font-size: 0.9rem; font-weight: 400; color: var(--color-offwhite); }
+                          .DropdownList { row-gap: 0.25rem; padding: 0; list-style-type: none;}
+                            .DropdownLink { font-size: 0.8rem; text-decoration: none;  transition: color .3s; color: var(--color-secondary);
+                              &:hover { color: var(--color-primary); }
+                            }
+    /* Hero */                
     .Hero {  }
       .Logo { display: block; padding: 3rem 0;}
         .LogoPicture { display: flex; align-items: center; justify-content: center;}
