@@ -6,6 +6,66 @@ $navTrigger.addEventListener('click' , () => {
     $navMenu.classList.toggle('Active');
 }, true);
 
+// SHOW DROPDOWN MENU //
+const dropdownItems = document.querySelectorAll('.Dropdown')
+
+// Select each dropdown item
+dropdownItems.forEach((item) =>{
+    const dropdownButon = item.querySelector('.DropdownBtn')
+
+    // Select each button click
+    dropdownButon.addEventListener('click', () =>{
+        // Select the current show-dropdown class
+        const showDropdown = document.querySelector('.show-dropdown')
+
+        // Call the toggleItem function
+        toggleItem(item)
+
+        // Remove the show-dropdown class from other items
+        if(showDropdown && showDropdown!= item){
+            toggleItem(showDropdown)
+        }
+    })
+})
+
+// Function to display the dropdown
+const toggleItem = (item) =>{
+    // Select each dropdown content
+    const dropdownContainer = item.querySelector('.DropdownContainer')
+
+    // If the same item contains the show-dropdown class , remove
+    if(item.classList.contains('show-dropdown')){
+        dropdownContainer.removeAttribute('style')
+        item.classList.remove('show-dropdown')
+    } else{
+        // Add the maximum height to the dropdown content and add the show-dropdown class
+        dropdownContainer.style.height = dropdownContainer.scrollHeight + 'px'
+        item.classList.add('show-dropdown')
+    }
+}
+
+
+//  DELETE DROPDOWN STYLES  //
+const mediaQuery = matchMedia('(min-width: 750px')
+    dropdownContainer = document.querySelectorAll('.DropdownContainer')
+
+// Function to remove dropdown styles in mobile mode when browser resizes
+const removeStyle = () => {
+    // Validate if the media query reaches 750px
+    if(mediaQuery.matches){
+        //Remove the dropdown container height style
+        dropdownContainer.forEach((e) =>{
+            e.removeAttribute('style')
+        })
+
+        // Remove the show-dropdown class from dropdown item
+        dropdownItems.forEach((e) =>{
+            e.classList.remove('show-dropdown')
+        })
+    }
+}
+
+addEventListener('resize', removeStyle)
 
 
 // Slider //
