@@ -4,6 +4,7 @@
     --color-primary: #2B6300;
     --color-secondary: rgb(128,128,128);
     --color-offwhite: #fdfdfd;
+    --color-light: rgb(215, 212, 0);
     --color-dark: rgb(0, 0, 0);
     --color-light-gray: rgba(40, 40, 40, 0.80);
 
@@ -52,7 +53,10 @@
 
 @media screen and (min-width: 1152px) { .Container { margin-inline: auto; } }
 
-html { font-family: 'Aleo', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; background: var(--color-dark) url('/images/zwartevilt.jpg') left top repeat; color: #fff;}
+html { font-family: 'Aleo', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; background: var(--color-dark) url('/images/zwartevilt.jpg') left top repeat; color: #fff;
+  &::-webkit-scrollbar { width: 1rem;}
+  &::-webkit-scrollbar-thumb { background-color: var(--color-light-gray); }
+}
 
 body { display: block; min-height: 100vh; margin: 0; text-rendering: optimizeSpeed; }
 
@@ -82,6 +86,8 @@ svg { fill: currentColor; }
 .Hidden, .ScreenReaders { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
 
 
+
+
 /* LAYOUT */
 .Container { position: relative; }
     /* Header */
@@ -96,9 +102,12 @@ svg { fill: currentColor; }
         }
             .ToggleIcon { display: block; }
         .MainMenu { display: none; position: absolute; width: 100%; height: calc(100vh - 4.687rem); overflow: auto; top: 4.687rem; left: 0; background: rgba(0, 0, 0, 0.9); color: var(--color-offwhite); border-top: 0.1rem solid rgba(255, 255, 255, 0.187); transition: top .4s, opacity .3s; 
-          @media (min-width: 750px) { display: flex; justify-content: space-between; width: auto; max-height: none; overflow: none; position: static; top: auto; background: transparent;  height: 6.687rem; }
           &::-webkit-scrollbar { width: .5rem;}
           &::-webkit-scrollbar-thumb { background-color: hsl(126, 6%, 31%); }
+          @media (min-width: 750px) { display: flex; justify-content: space-between; width: auto; max-height: none; overflow: none; position: static; top: auto; background: transparent;  height: 6.687rem;  border-top: none; 
+            &::-webkit-scrollbar { display: none; }
+            &::-webkit-scrollbar-thumb { display: none; }
+        }
         }
         .MainMenu.Active { display: block; }
             .MainMenuList { display: block; margin: 0; padding: 1rem; 
@@ -152,7 +161,7 @@ svg { fill: currentColor; }
                             @media (min-width: 750px) { row-gap: .75rem; }
                           }
                             .DropdownLink { font-size: 0.8rem; text-decoration: none;  transition: color .3s; color: var(--color-secondary);
-                              &:hover { color: var(--color-primary); }
+                              &:hover { color: var(--color-light); }
                               @media (min-width: 750px) { font-size: 0.9rem; }
                             }
                     .show-dropdown { background-color: var(--color-light-gray); }
