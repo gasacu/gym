@@ -137,9 +137,9 @@
                 <picture class="LogoPicture">
                     <source type="image/svg+xml" srcset="./images/gorilla-logo.png" width="450" height="280" 
                     media="(min-width: 750px)" />
-                    <source type="image/svg+xml" srcset="./images/gorilla-logo.png"
+                    <source type="image/svg+xml" srcset="./images/gorilla-logo.png" width="350" height="230" 
                     media="(min-width: 100px)" />
-                    <img src="./images/gorilla-logo.png" alt="Gorilla Gym - Logo" width="350" height="196" />
+                    <img src="./images/gorilla-logo.png" alt="Gorilla Gym - Logo" width="350" height="230" />
                 </picture>
             </a>
             <div class="HeroButtons">
@@ -148,32 +148,42 @@
             </div>
         </section>
         <section class="About">
+            <div class="AboutContainer">
+                <div class="AboutHeader">
+                    <h2 class="AboutTitle">Vă oferim cele mai bune facilități și soluții pentru antrenament</h2>
+                </div>
+                <div class="AboutList">
+                    <span class="AboutItem">
+                        <div class="AboutItemContent">
+                            <a href="#" class="AboutItemIcon"></a>
+                            <h3 class="AboutItemTitle">Gorrila Gym</h3>
+                            <p class="AboutItemParagraph">Facilități complete</p>
+                        </div>
+                    </span>
+                    <span class="AboutItem">
+                        <div class="AboutItemContent">
+                            <a href="#" class="AboutItemIcon"></a>
+                            <h3 class="AboutItemTitle">Turul Sălii</h3>
+                            <p class="AboutItemParagraph">Sala ta preferată</p>
+                        </div>
+                    </span>
+                    <span class="AboutItem">
+                        <div class="AboutItemContent">
+                            <a href="#" class="AboutItemIcon"></a>
+                            <h3 class="AboutItemTitle">Magazinul Gorilla</h3>
+                            <p class="AboutItemParagraph">Haine de gorilă</p>
+                        </div>
+                    </span>
+                    <span class="AboutItem">
+                        <div class="AboutItemContent">
+                            <a href="#" class="AboutItemIcon"></a>
+                            <h3 class="AboutItemTitle">Antrenori</h3>
+                            <p class="AboutItemParagraph">Antrenori personali</p>
+                        </div>
+                    </span>
+                </div>
+            </div>
             <h3 class="SectionTitle">DESPRE NOI</h3>
-            <div class="Slideshow">
-                <div class="MySlides Fade">
-                    <div class="CornerText">1 / 3</div>
-                    <img src="images/283444284_1178431202726964_5598035296939122371_n.jpg" class="SlideImage">
-                    <button class="Button ButtonPrimary" href="#" title="Vezi mai multe informații despre Gorilla Gym">See Details</button>
-                </div>
-                <div class="MySlides Fade">
-                    <div class="CornerText">2 / 3</div>
-                    <img src="images/285232640_1178431106060307_8395213172766327643_n.jpg" class="SlideImage">
-                    <button class="HeroBtn Button ButtonPrimary" href="#" title="Vezi mai multe informații despre Serviciile Gorilla Gym">See Details</button>
-                </div>
-                <div class="MySlides Fade">
-                    <div class="CornerText">3 / 3</div>
-                    <img src="images/323057728_2369699106532537_7808417564148184124_n.jpg" class="SlideImage">
-                    <button class="Button ButtonPrimary" href="#" title="Vezi mai multe informații despre Abonamentele Gorilla Gym">See Details</button>
-                </div>
-                <a class="Prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <br>
-            <div class="SlidesDots">
-                <span class="Dot" onclick="currentSlides(1)"></span>
-                <span class="Dot" onclick="currentSlides(2)"></span>
-                <span class="Dot" onclick="currentSlides(3)"></span>
-            </div>
             <p class="SectionText">Îți oferim cel mai bun program pentru sănătatea ta și pentru frumusețea ta din exterior cât și din interior. Îți oferim cele mai bune facilități de fitness.</p>
             <img src="images/about-us.svg" class="AboutImage" width="320" height="260" alt="Detalii despre cel mai mare lanț de centre de fitness din Craiova">
             <ul class="AboutSectionList">
@@ -207,6 +217,31 @@
         <section class="Services">
             <h2 class="SectionTitle">OUR <span>SERVICES</span></h2>
             <p class="SectionParagraph">Îți oferim cel mai bun program pentru sănătatea ta și pentru frumusețea ta din exterior cât și din interior. Îți oferim cele mai bune facilități de fitness.</p>
+            <div class="Slideshow">
+                <div class="MySlides Fade">
+                    <div class="CornerText">1 / 3</div>
+                    <img src="images/283444284_1178431202726964_5598035296939122371_n.jpg" class="SlideImage">
+                    <button class="Button ButtonPrimary" href="#" title="Vezi mai multe informații despre Gorilla Gym">See Details</button>
+                </div>
+                <div class="MySlides Fade">
+                    <div class="CornerText">2 / 3</div>
+                    <img src="images/285232640_1178431106060307_8395213172766327643_n.jpg" class="SlideImage">
+                    <button class="HeroBtn Button ButtonPrimary" href="#" title="Vezi mai multe informații despre Serviciile Gorilla Gym">See Details</button>
+                </div>
+                <div class="MySlides Fade">
+                    <div class="CornerText">3 / 3</div>
+                    <img src="images/323057728_2369699106532537_7808417564148184124_n.jpg" class="SlideImage">
+                    <button class="Button ButtonPrimary" href="#" title="Vezi mai multe informații despre Abonamentele Gorilla Gym">See Details</button>
+                </div>
+                <a class="Prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div class="SlidesDots">
+                <span class="Dot" onclick="currentSlides(1)"></span>
+                <span class="Dot" onclick="currentSlides(2)"></span>
+                <span class="Dot" onclick="currentSlides(3)"></span>
+            </div>
             <ul class="ArticleList">
                 <li class="Article">
                     <a class="ArticleLink" href="#" title="Citeste articolul @TODO">
